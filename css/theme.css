@@ -1,0 +1,58 @@
+/* =============================================
+   THEME: Warm Pastel Room — Shaun Lewis Therapy
+   Derived from the practitioner's own consulting-room photographs:
+   honey pine floorboards, cream walls, oatmeal linen, a faded
+   dusty-rose rug, warm lamplight, white roses and eucalyptus.
+
+   Client brief: "Pastels, warm colours" / "Not too busy please,
+   nice and simple."
+
+   Tri-tone system:
+     anchor      warm clay-rose   #8F5A44  (the pine + the rug)
+     co-accent   honey / wheat    #D9AE7E  (the floorboards + lamplight)
+     fine detail eucalyptus sage  #556B59  (the foliage in his room)
+   Neutrals are deliberately warm-tinted — never flat #FFF or cool grey.
+
+   Every foreground/background pair used on the site was checked and
+   passes WCAG 2.1 AA (4.5:1 body text, 3:1 large text / UI).
+
+   Font pairing: classic-elegance (Cormorant Garamond + DM Sans)
+   Aesthetic preset: soft (base.css default — no token overrides needed)
+   ============================================= */
+
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+/* --- Theme Variables --- */
+:root {
+  /* Colour Palette */
+  --color-primary: #8F5A44;
+  --color-primary-light: #C89886;
+  --color-primary-dark: #6E4232;
+  --color-secondary: #D9AE7E;
+  --color-secondary-light: #EBD3B4;
+  --color-secondary-dark: #87602F;
+  --color-accent: #556B59;
+  --color-accent-light: #A9BCAB;
+
+  --color-bg: #FDF9F4;
+  --color-bg-alt: #F4EBE0;
+  --color-bg-dark: #33261F;
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #FBF5EE;
+
+  --color-text: #3D332C;
+  --color-text-light: #6F6055;
+  --color-text-inverse: #FDF9F4;
+  --color-text-heading: #2C231D;
+
+  --color-border: #E3D5C5;
+  --color-border-light: #F1E8DD;
+
+  --color-success: #556B59;
+  --color-error: #A8402F;
+
+  /* Typography */
+  --font-heading: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
