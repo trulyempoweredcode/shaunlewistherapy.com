@@ -60,6 +60,11 @@
   --color-border: #DFD9D1;
   --color-border-light: #EFEAE4;
 
+  /* Light stop of the credentials band's gradient (consumed by
+     .info-band--primary). Lifts the band off the darker clay so it reads as
+     warm terracotta rather than brown. */
+  --info-band-from: #976c5c;
+
   --color-success: #556B59;
   --color-error: #A8402F;
 

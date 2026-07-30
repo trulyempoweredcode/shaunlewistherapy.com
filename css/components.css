@@ -4972,8 +4972,19 @@ a.card--service:hover .card__link {
 }
 
 /* Primary colour variant */
+/* The gradient's light stop is tokenised so a site can tune the band without
+   forking this file. Default is unchanged, so existing sites are unaffected. */
 .info-band--primary {
-  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+  background: linear-gradient(135deg, var(--info-band-from, var(--color-primary-dark)) 0%, var(--color-primary) 100%);
+}
+
+/* A lighter gradient stop pushes both the inverse-cream title (~4.3:1) and the
+   muted 70%-white sub-line (~3.1:1) below AA on a mid-tone clay. Pure white on
+   the primary variant clears 4.5:1 at both gradient stops without relying on a
+   borderline "large text" exemption; hierarchy still comes from size + typeface. */
+.info-band--primary,
+.info-band--primary .info-band__text {
+  color: #FFFFFF;
 }
 
 .info-band--primary .info-band__icon {
