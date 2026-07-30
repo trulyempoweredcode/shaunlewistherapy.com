@@ -1,23 +1,29 @@
 /* =============================================
-   THEME: Warm Pastel Room — Shaun Lewis Therapy
-   Derived from the practitioner's own consulting-room photographs:
-   honey pine floorboards, cream walls, oatmeal linen, a faded
-   dusty-rose rug, warm lamplight, white roses and eucalyptus.
+   THEME: Room & Rug — Shaun Lewis Therapy
+   Sampled from the practitioner's own consulting-room photographs.
 
-   Client brief: "Pastels, warm colours" / "Not too busy please,
-   nice and simple."
+   A hue histogram of his photos showed 81% of the room sitting in a single
+   warm band (hue 15-45: pine floor, cream walls, lamplight). Building only
+   from the dominant colours produced a one-hue wash, so the co-accent is
+   taken from what is actually IN the room but not dominant: the faded blue
+   and rose of his rug, and the coloured panes of his stained-glass front
+   door (hue 180-225). His previous website's own accent was #5a8f9c, the
+   same family.
 
-   Tri-tone system:
-     anchor      warm clay-rose   #8F5A44  (the pine + the rug)
-     co-accent   honey / wheat    #D9AE7E  (the floorboards + lamplight)
-     fine detail eucalyptus sage  #556B59  (the foliage in his room)
-   Neutrals are deliberately warm-tinted — never flat #FFF or cool grey.
+   Three distinct hue families, so nothing reads as a wash:
+     ANCHOR      warm clay   #8F5A44   hue  20   pine, rug ground, woodwork
+     CO-ACCENT   teal-blue   #327486   hue 193   rug, stained glass, his old brand
+     DETAIL      sage        #556B59   hue  90   eucalyptus and foliage
 
-   Every foreground/background pair used on the site was checked and
-   passes WCAG 2.1 AA (4.5:1 body text, 3:1 large text / UI).
+   Pastels live in the tints and in the alternating section background:
+   warm cream (#FDF9F4) alternates with pale duck-egg (#E8F0F1), so section
+   boundaries shift HUE, not just lightness.
+
+   Every foreground/background pair used on this site was checked and passes
+   WCAG 2.1 AA (4.5:1 body text, 3:1 large text and UI).
 
    Font pairing: classic-elegance (Cormorant Garamond + DM Sans)
-   Aesthetic preset: soft (base.css default — no token overrides needed)
+   Aesthetic preset: soft (base.css default)
    ============================================= */
 
 /* --- Google Fonts --- */
@@ -25,29 +31,34 @@
 
 /* --- Theme Variables --- */
 :root {
-  /* Colour Palette */
+  /* Anchor — warm clay, from the pine and the rug ground */
   --color-primary: #8F5A44;
   --color-primary-light: #C89886;
   --color-primary-dark: #6E4232;
-  --color-secondary: #D9AE7E;
-  --color-secondary-light: #EBD3B4;
-  --color-secondary-dark: #87602F;
+
+  /* Co-accent — teal-blue, from the rug and the stained-glass door */
+  --color-secondary: #327486;
+  --color-secondary-light: #A9C6CC;
+  --color-secondary-dark: #245B6B;
+
+  /* Detail — sage, from the eucalyptus */
   --color-accent: #556B59;
   --color-accent-light: #A9BCAB;
 
+  /* Backgrounds — warm cream alternating with pale duck-egg */
   --color-bg: #FDF9F4;
-  --color-bg-alt: #F4EBE0;
+  --color-bg-alt: #E8F0F1;
   --color-bg-dark: #33261F;
   --color-surface: #FFFFFF;
-  --color-surface-alt: #FBF5EE;
+  --color-surface-alt: #F7FBFB;
 
   --color-text: #3D332C;
-  --color-text-light: #6F6055;
+  --color-text-light: #6B5F56;
   --color-text-inverse: #FDF9F4;
   --color-text-heading: #2C231D;
 
-  --color-border: #E3D5C5;
-  --color-border-light: #F1E8DD;
+  --color-border: #DFD9D1;
+  --color-border-light: #EFEAE4;
 
   --color-success: #556B59;
   --color-error: #A8402F;

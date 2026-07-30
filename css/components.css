@@ -4958,8 +4958,11 @@ a.card--service:hover .card__link {
 
 .info-band__title {
   font-family: var(--font-heading);
-  font-size: var(--text-md);
+  font-size: var(--text-lg);
   font-weight: var(--font-weight-semibold);
+  line-height: 1.25;
+  display: block;
+  margin-bottom: 2px;
 }
 
 .info-band__text {
