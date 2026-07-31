@@ -3950,10 +3950,13 @@ a.card--service:hover .card__link {
   flex: 1;
 }
 
+/* --text-base, matching .card__text, so all secondary prose sits at one size.
+   At --text-sm this dropped 19px body copy to 16px inside a callout that often
+   sits directly under body copy, which reads as an inconsistent type scale. */
 .highlight-box__content p {
   color: var(--color-text-light);
   line-height: var(--line-height-relaxed);
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   margin: 0 0 var(--space-md);
 }
 
