@@ -1,5 +1,6 @@
 # Internal / build artefacts — never publish to the client site repo
 client-brief.md
+content-checklist.html
 portal-content/
 images.json
 .claude/
