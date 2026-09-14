@@ -3400,14 +3400,36 @@ a.card--service:hover .card__link {
   color: var(--color-secondary-light);
 }
 
+/* Breadcrumbs on a dark page-header.
+   TWO NAMING CONVENTIONS ON PURPOSE - do not "tidy" either set away.
+   PLURAL (.breadcrumbs__item / __separator / __item--active) is the real one:
+   it is what blog-post.html, theme-preview.html and 44 client pages actually
+   emit, and it is the set with base styling further down this file. Only the
+   SINGULAR names (.breadcrumb__link / __current / __separator) were listed here
+   originally, so they matched nothing and a dark header left the breadcrumbs in
+   their default dark-on-dark colours, i.e. invisible. The singular selectors are
+   retained purely so any hand-written markup using them keeps working.
+   The anchor is overridden explicitly: .breadcrumbs__item a sets its own colour,
+   so colouring only the parent item would never reach the link. */
+.page-header--dark .breadcrumbs__item,
 .page-header--dark .breadcrumb__link {
   color: rgba(255, 255, 255, 0.7);
 }
 
+.page-header--dark .breadcrumbs__item a {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.page-header--dark .breadcrumbs__item a:hover {
+  color: var(--color-text-inverse);
+}
+
+.page-header--dark .breadcrumbs__item--active,
 .page-header--dark .breadcrumb__current {
   color: var(--color-text-inverse);
 }
 
+.page-header--dark .breadcrumbs__separator,
 .page-header--dark .breadcrumb__separator {
   color: rgba(255, 255, 255, 0.4);
 }
@@ -3467,14 +3489,27 @@ a.card--service:hover .card__link {
   color: rgba(255, 255, 255, 0.75);
 }
 
+/* Breadcrumbs on an image page-header. Same two-convention story as
+   .page-header--dark above - see the comment there before editing. */
+.page-header--image .breadcrumbs__item,
 .page-header--image .breadcrumb__link {
   color: rgba(255, 255, 255, 0.7);
 }
 
+.page-header--image .breadcrumbs__item a {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.page-header--image .breadcrumbs__item a:hover {
+  color: var(--color-text-inverse);
+}
+
+.page-header--image .breadcrumbs__item--active,
 .page-header--image .breadcrumb__current {
   color: var(--color-text-inverse);
 }
 
+.page-header--image .breadcrumbs__separator,
 .page-header--image .breadcrumb__separator {
   color: rgba(255, 255, 255, 0.4);
 }
@@ -3568,7 +3603,8 @@ a.card--service:hover .card__link {
 
 .footer__legal {
   display: flex;
-  gap: var(--space-lg);
+  flex-wrap: wrap;
+  gap: var(--space-xs) var(--space-lg);
   justify-content: center;
 }
 
@@ -7309,6 +7345,14 @@ a.card--service:hover .card__link {
 /* =============================================
    CARD HOVER LIFTS
    Subtle lift effect on interactive cards.
+
+   .team-card intentionally has NO base rule and must not be given one. It is a
+   hover-intensity hook, not a standalone component: it is always written
+   alongside .card (see creativewellness.co.uk/about.html, which uses
+   "card card--image-top card--portrait team-card"), so .card supplies the base
+   styling and .card:hover the default -2px lift, and this rule upgrades that
+   lift to -4px. The real standalone team component is .team-member.
+   Do not delete it as an orphan either - a live client site depends on it.
    ============================================= */
 .card--service:hover,
 .icon-box--card:hover,
@@ -7373,23 +7417,15 @@ a.card--service:hover .card__link {
   box-shadow: none;
 }
 
-/* =============================================
-   SMOOTH LINK UNDERLINE ANIMATION
-   Animated underline grows from left on hover.
-   ============================================= */
-.content a:not(.btn) {
-  text-decoration: none;
-  background-image: linear-gradient(var(--color-primary), var(--color-primary));
-  background-size: 0% 2px;
-  background-position: left bottom;
-  background-repeat: no-repeat;
-  transition: background-size var(--transition-base);
-  padding-bottom: 1px;
-}
-
-.content a:not(.btn):hover {
-  background-size: 100% 2px;
-}
+/* SMOOTH LINK UNDERLINE ANIMATION - REMOVED in v1.7.10.
+   It was scoped to `.content`, and no element in master or across the fleet has
+   ever carried that class: a sweep of every shipped page in master-site-template
+   and all client sites found zero exact `content` class tokens. (Beware the false
+   positive - a substring search matches `privacy-content` and `cookies-content`
+   and reports ~74 pages.) So the rule could never fire. Prose links are handled
+   by the `main p a` / `main li a` rule instead - see the "Inline content links"
+   entry in COMPONENTS.md. If an animated underline is ever wanted, add it there
+   rather than reviving a class nothing applies. */
 
 /* =============================================
    PRINT STYLES
